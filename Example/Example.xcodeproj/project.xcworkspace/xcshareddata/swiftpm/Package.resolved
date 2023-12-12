@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "wwprint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWPrint",
+      "state" : {
+        "revision" : "edb791ed5e59c0f4044810d21a89102a440e2fbd",
+        "version" : "1.2.1"
+      }
+    },
+    {
+      "identity" : "wwscratchcard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWScratchCard",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d6a0e82d10c40117bb18a97f3f791467cc1c3835"
+      }
+    }
+  ],
+  "version" : 2
+}
