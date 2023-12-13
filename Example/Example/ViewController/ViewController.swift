@@ -11,6 +11,7 @@ import WWScratchCard
 final class ViewController: UIViewController {
     
     @IBOutlet weak var scratchCardView: WWScratchCard!
+    @IBOutlet weak var percentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,16 @@ final class ViewController: UIViewController {
     }
 }
 
+// MARK: - ScratchCardDelegate
+extension ViewController: ScratchCardDelegate {
+    
+    func maskPercent(_ maskCard: WWScratchCard, percent: Float?) {
+        guard let percent = percent else { return }
+        percentLabel.text = "\((1.0 - percent) * 100) %"
+    }
+}
+
+// MARK: - 小工具
 private extension ViewController {
     
     func demo(contentImagename: String, coverImagename: String, resetTime: Double) {
@@ -27,8 +38,8 @@ private extension ViewController {
 
         contentView.contentMode = .scaleAspectFill
         coverView.contentMode = .scaleAspectFill
-        scratchCardView.setting(coverView: coverView, contentView: contentView, strokeWidth: 20.0)
-        
+        scratchCardView.setting(maskCardDelegate: self, coverView: coverView, contentView: contentView, strokeWidth: 20.0)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + resetTime) {
             self.scratchCardView.clearCanvas()
         }
