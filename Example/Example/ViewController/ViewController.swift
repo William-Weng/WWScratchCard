@@ -23,8 +23,11 @@ final class ViewController: UIViewController {
 extension ViewController: ScratchCardDelegate {
     
     func maskPercent(_ maskCard: WWScratchCard, percent: Float?) {
+        
         guard let percent = percent else { return }
-        percentLabel.text = "\((1.0 - percent) * 100) %"
+        
+        let value = Int((1.0 - percent) * 100)
+        percentLabel.text = "\(value) %"
     }
 }
 
@@ -39,9 +42,10 @@ private extension ViewController {
         contentView.contentMode = .scaleAspectFill
         coverView.contentMode = .scaleAspectFill
         scratchCardView.setting(maskCardDelegate: self, coverView: coverView, contentView: contentView, strokeWidth: 20.0)
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + resetTime) {
             self.scratchCardView.clearCanvas()
+            self.percentLabel.text = "0 %"
         }
     }
 }
