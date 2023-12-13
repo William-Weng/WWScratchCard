@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WWPrint
 
 protocol ScratchMaskCardDelegate: NSObject {
     
