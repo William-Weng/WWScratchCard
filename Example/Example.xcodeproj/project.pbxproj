@@ -14,7 +14,8 @@
 		3DBCD87D26F198F300522E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87C26F198F300522E3B /* Assets.xcassets */; };
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		64AD50B42B2B671300D8085D /* WWScratchCard in Frameworks */ = {isa = PBXBuildFile; productRef = 64AD50B32B2B671300D8085D /* WWScratchCard */; };
-		64AD50B72B2B6AE800D8085D /* WWScratchCard in Frameworks */ = {isa = PBXBuildFile; productRef = 64AD50B62B2B6AE800D8085D /* WWScratchCard */; };
+		64DC95DA2B2B6DA100441F50 /* WWScratchCard in Frameworks */ = {isa = PBXBuildFile; productRef = 64DC95D92B2B6DA100441F50 /* WWScratchCard */; };
+		64DC95DD2B2B717100441F50 /* WWScratchCard in Frameworks */ = {isa = PBXBuildFile; productRef = 64DC95DC2B2B717100441F50 /* WWScratchCard */; };
 		8130039027D5D18100436128 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130038F27D5D18100436128 /* Constant.swift */; };
 		8130039227D5D19000436128 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130039127D5D19000436128 /* Extension.swift */; };
 		81D2284F2B2AFA1A00E8FF85 /* WWScratchCard in Frameworks */ = {isa = PBXBuildFile; productRef = 81D2284E2B2AFA1A00E8FF85 /* WWScratchCard */; };
@@ -38,7 +39,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
-				64AD50B72B2B6AE800D8085D /* WWScratchCard in Frameworks */,
+				64DC95DD2B2B717100441F50 /* WWScratchCard in Frameworks */,
+				64DC95DA2B2B6DA100441F50 /* WWScratchCard in Frameworks */,
 				64AD50B42B2B671300D8085D /* WWScratchCard in Frameworks */,
 				81D2284F2B2AFA1A00E8FF85 /* WWScratchCard in Frameworks */,
 			);
@@ -146,7 +148,8 @@
 				3DAC9C1827016E78006663C2 /* WWPrint */,
 				81D2284E2B2AFA1A00E8FF85 /* WWScratchCard */,
 				64AD50B32B2B671300D8085D /* WWScratchCard */,
-				64AD50B62B2B6AE800D8085D /* WWScratchCard */,
+				64DC95D92B2B6DA100441F50 /* WWScratchCard */,
+				64DC95DC2B2B717100441F50 /* WWScratchCard */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -178,7 +181,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
-				64AD50B52B2B6AE800D8085D /* XCRemoteSwiftPackageReference "WWScratchCard" */,
+				64DC95DB2B2B717100441F50 /* XCRemoteSwiftPackageReference "WWScratchCard" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -430,12 +433,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		64AD50B52B2B6AE800D8085D /* XCRemoteSwiftPackageReference "WWScratchCard" */ = {
+		64DC95DB2B2B717100441F50 /* XCRemoteSwiftPackageReference "WWScratchCard" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWScratchCard/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 1.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -450,9 +453,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWScratchCard;
 		};
-		64AD50B62B2B6AE800D8085D /* WWScratchCard */ = {
+		64DC95D92B2B6DA100441F50 /* WWScratchCard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 64AD50B52B2B6AE800D8085D /* XCRemoteSwiftPackageReference "WWScratchCard" */;
+			productName = WWScratchCard;
+		};
+		64DC95DC2B2B717100441F50 /* WWScratchCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DC95DB2B2B717100441F50 /* XCRemoteSwiftPackageReference "WWScratchCard" */;
 			productName = WWScratchCard;
 		};
 		81D2284E2B2AFA1A00E8FF85 /* WWScratchCard */ = {

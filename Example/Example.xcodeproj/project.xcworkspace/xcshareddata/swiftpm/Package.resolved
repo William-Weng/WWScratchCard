@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWScratchCard/",
       "state" : {
-        "revision" : "9b8889461560b14e2933e9b9d09ff91ca46e811c",
-        "version" : "1.2.0"
+        "revision" : "4453712cefc37bd9dd45b015215d215769e2d6f5",
+        "version" : "1.2.1"
       }
     }
   ],

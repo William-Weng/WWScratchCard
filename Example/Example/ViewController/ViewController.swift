@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WWPrint
 import WWScratchCard
 
 final class ViewController: UIViewController {
@@ -23,11 +24,7 @@ final class ViewController: UIViewController {
 extension ViewController: WWScratchCardDelegate {
     
     func scratchBegan(point: CGPoint) {}
-    
-    func scratchMoved(progress: Float) {
-        scratchMovedAction(progress: progress, finishProgress: 0.7)
-    }
-    
+    func scratchMoved(progress: Float) { scratchMovedAction(progress: progress, finishProgress: 0.5) }
     func scratchEnded(point: CGPoint) {}
 }
 
@@ -47,7 +44,6 @@ private extension ViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.scratchCard.restart(couponImage: couponImage, maskImage: maskImage, contentMode: .scaleToFill)
-            self.label.text = "0.0 %"
         }
     }
     
@@ -56,13 +52,11 @@ private extension ViewController {
     ///   - progress: Float
     ///   - finishProgress: Float
     func scratchMovedAction(progress: Float, finishProgress: Float) {
+                
+        let percent = String(format: "%.1f", progress * 100)
         
-        var percent = String(format: "%.1f", progress * 100)
-        
-        if (progress > 0.5) {
-            percent = "100.0"
-            scratchCard.finish()
-        }
+        if (progress > 0.99999) { label.text = "100.0 %"; return }
+        if (progress > finishProgress) { scratchCard.finish(); return }
         
         label.text = "\(percent)%"
     }

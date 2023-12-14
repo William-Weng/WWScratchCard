@@ -46,7 +46,7 @@ public extension WWScratchCardView {
         setNeedsDisplay()
     }
     
-    /// 重新開始
+    /// 重新開始 (0%)
     /// - Parameters:
     ///   - couponImage: 優惠卷圖片
     ///   - maskImage: 塗層圖片
@@ -54,11 +54,13 @@ public extension WWScratchCardView {
         couponImageView.contentMode = contentMode
         couponImageView.image = couponImage
         scratchMask.image = maskImage
+        scratchMask.delegate?.scratchMoved(progress: 0.0)
     }
     
     /// 全部完成 (100%)
     func finish() {
         scratchMask.image = nil
+        scratchMask.delegate?.scratchMoved(progress: 1.0)
     }
 }
 
