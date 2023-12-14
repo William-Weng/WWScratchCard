@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WWPrint
 import WWScratchCard
 
 final class ViewController: UIViewController {
