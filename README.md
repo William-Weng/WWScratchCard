@@ -21,43 +21,45 @@ import UIKit
 import WWScratchCard
 
 final class ViewController: UIViewController {
-    
-    @IBOutlet weak var scratchCardView: WWScratchCard!
-    @IBOutlet weak var percentLabel: UILabel!
+
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var scratchCard: WWScratchCardView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        demo(contentImagename: "Desktop", coverImagename: "Gray", resetTime: 5.0)
+        test()
     }
 }
 
-// MARK: - ScratchCardDelegate
-extension ViewController: ScratchCardDelegate {
+// MARK: - WWScratchCardDelegate
+extension ViewController: WWScratchCardDelegate {
     
-    func maskPercent(_ maskCard: WWScratchCard, percent: Float?) {
-        
-        guard let percent = percent else { return }
-        
-        let value = Int((1.0 - percent) * 100)
-        percentLabel.text = "\(value) %"
+    func scratchBegan(point: CGPoint) {}
+    
+    func scratchMoved(progress: Float) {
+        let percent = String(format: "%.1f", progress * 100)
+        label.text = "\(percent)%"
     }
+    
+    func scratchEnded(point: CGPoint) {}
 }
 
 // MARK: - 小工具
 private extension ViewController {
     
-    func demo(contentImagename: String, coverImagename: String, resetTime: Double) {
+    func test() {
         
-        let contentView = UIImageView(image: UIImage(named: contentImagename))
-        let coverView = UIImageView(image: UIImage(named: coverImagename))
-
-        contentView.contentMode = .scaleAspectFill
-        coverView.contentMode = .scaleAspectFill
-        scratchCardView.setting(maskCardDelegate: self, coverView: coverView, contentView: contentView, strokeWidth: 20.0)
+        guard let couponImage = UIImage(named: "Desktop.png"),
+              let maskImage = UIImage(named: "Gray.png")
+        else {
+            return
+        }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + resetTime) {
-            self.scratchCardView.clearCanvas()
-            self.percentLabel.text = "0 %"
+        scratchCard.setting(delegate: self, couponImage: couponImage, maskImage: maskImage, contentMode: .scaleToFill)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.scratchCard.restart(couponImage: couponImage, maskImage: maskImage, contentMode: .scaleToFill)
+            self.label.text = "0.0 %"
         }
     }
 }

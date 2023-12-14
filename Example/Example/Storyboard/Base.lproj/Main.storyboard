@@ -17,9 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUC-Qc-HFT" customClass="WWScratchCard" customModule="WWScratchCard">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUC-Qc-HFT" customClass="WWScratchCardView" customModule="WWScratchCard">
+                                <rect key="frame" x="79.5" y="266" width="255" height="364"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bUC-Qc-HFT" secondAttribute="height" multiplier="0.7" id="lbO-ne-XXr"/>
+                                    <constraint firstAttribute="width" constant="255" id="vzZ-GO-4xp"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-0Y-v8a">
                                 <rect key="frame" x="155.5" y="415" width="103" height="66"/>
@@ -31,18 +35,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="bUC-Qc-HFT" secondAttribute="bottom" id="Eex-O1-HqS"/>
-                            <constraint firstItem="bUC-Qc-HFT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FcP-16-YVF"/>
-                            <constraint firstItem="bUC-Qc-HFT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gzr-Dx-VKo"/>
-                            <constraint firstItem="1Jm-0Y-v8a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lra-5D-wvb"/>
-                            <constraint firstItem="1Jm-0Y-v8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c35-Mh-23J"/>
-                            <constraint firstItem="bUC-Qc-HFT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="paL-L1-WAS"/>
+                            <constraint firstItem="1Jm-0Y-v8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0j0-3t-EWl"/>
+                            <constraint firstItem="bUC-Qc-HFT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3EG-VU-y1B"/>
+                            <constraint firstItem="bUC-Qc-HFT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lj7-yo-X73"/>
+                            <constraint firstItem="1Jm-0Y-v8a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yX9-Eu-UN5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nvs-zi-2RQ"/>
                     <connections>
-                        <outlet property="percentLabel" destination="1Jm-0Y-v8a" id="q28-N0-mEb"/>
-                        <outlet property="scratchCardView" destination="bUC-Qc-HFT" id="xWg-TY-pdC"/>
+                        <outlet property="label" destination="1Jm-0Y-v8a" id="h0G-g7-GZE"/>
+                        <outlet property="scratchCard" destination="bUC-Qc-HFT" id="0BE-Ue-KyB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,6 +58,9 @@
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -12,10 +12,10 @@
     {
       "identity" : "wwscratchcard",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWScratchCard",
+      "location" : "https://github.com/William-Weng/WWScratchCard.git",
       "state" : {
-        "revision" : "f679464c5b5e75006d29818a9140917a91881d84",
-        "version" : "1.1.1"
+        "revision" : "95f9a02a7cd867b54720da72fdbec11b70b6f06b",
+        "version" : "1.1.2"
       }
     }
   ],
