@@ -55,6 +55,11 @@ public extension WWScratchCardView {
         couponImageView.image = couponImage
         scratchMask.image = maskImage
     }
+    
+    /// 全部完成 (100%)
+    func finish() {
+        scratchMask.image = nil
+    }
 }
 
 // MARK: - 小工具

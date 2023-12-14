@@ -25,8 +25,7 @@ extension ViewController: WWScratchCardDelegate {
     func scratchBegan(point: CGPoint) {}
     
     func scratchMoved(progress: Float) {
-        let percent = String(format: "%.1f", progress * 100)
-        label.text = "\(percent)%"
+        scratchMovedAction(progress: progress, finishProgress: 0.7)
     }
     
     func scratchEnded(point: CGPoint) {}
@@ -35,6 +34,7 @@ extension ViewController: WWScratchCardDelegate {
 // MARK: - 小工具
 private extension ViewController {
     
+    /// 測試
     func test() {
         
         guard let couponImage = UIImage(named: "Desktop.png"),
@@ -49,5 +49,21 @@ private extension ViewController {
             self.scratchCard.restart(couponImage: couponImage, maskImage: maskImage, contentMode: .scaleToFill)
             self.label.text = "0.0 %"
         }
+    }
+    
+    /// 刮刮樂的動作處理 (50%解鎖)
+    /// - Parameters:
+    ///   - progress: Float
+    ///   - finishProgress: Float
+    func scratchMovedAction(progress: Float, finishProgress: Float) {
+        
+        var percent = String(format: "%.1f", progress * 100)
+        
+        if (progress > 0.5) {
+            percent = "100.0"
+            scratchCard.finish()
+        }
+        
+        label.text = "\(percent)%"
     }
 }

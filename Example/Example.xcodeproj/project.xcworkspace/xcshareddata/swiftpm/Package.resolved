@@ -3,7 +3,7 @@
     {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWPrint",
+      "location" : "https://github.com/William-Weng/WWPrint.git",
       "state" : {
         "revision" : "edb791ed5e59c0f4044810d21a89102a440e2fbd",
         "version" : "1.2.1"
@@ -12,10 +12,10 @@
     {
       "identity" : "wwscratchcard",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWScratchCard.git",
+      "location" : "https://github.com/William-Weng/WWScratchCard/",
       "state" : {
-        "revision" : "95f9a02a7cd867b54720da72fdbec11b70b6f06b",
-        "version" : "1.1.2"
+        "revision" : "9b8889461560b14e2933e9b9d09ff91ca46e811c",
+        "version" : "1.2.0"
       }
     }
   ],

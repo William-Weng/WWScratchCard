@@ -29,9 +29,7 @@ extension CGContext {
     ///   - colorSpace: CGColorSpace
     /// - Returns: CGContext?
     static func _build(bitmapInfo: CGBitmapInfo, size: CGSize, pixelData: UnsafeMutableRawPointer?, bitsPerComponent: Int, colorSpace: CGColorSpace) -> CGContext? {
-        
         let context = CGContext(data: pixelData, width: Int(size.width), height: Int(size.height), bitsPerComponent: bitsPerComponent, bytesPerRow: Int(size.width), space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
-        
         return context
     }
 }
